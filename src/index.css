@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --color-primary: #EA580C;
+  --color-primary-light: #F97316;
+  --color-primary-dark: #C2410C;
+  --color-accent: #B45309;
+  --color-accent-dark: #92400E;
+  --color-dark: #1C1210;
+  --color-dark-light: #2D1F1A;
+  --color-surface: #FFFBF5;
+  --color-surface-alt: #FFF7ED;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #faf5f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #EA580C;
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(234, 88, 12, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(234, 88, 12, 0.6); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-count-up {
+  animation: count-up 0.6s ease-out forwards;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #EA580C 0%, #D97706 50%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #EAB308 50%, #F97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(28, 18, 16, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Map pin animation */
+@keyframes bounce-pin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-bounce-pin {
+  animation: bounce-pin 2s ease-in-out infinite;
+}
+
+/* Section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
